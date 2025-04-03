@@ -28,41 +28,57 @@ Model Context Protocol(MCP)을 활용하여 주식 시장 데이터를 조회할
 - Python 3.10 이상
 - [uv](https://docs.astral.sh/uv/) 또는 pip
 
-### 의존성 설치
+### 운영체제별 설치 및 사용 방법
 
-```bash
-# uv 사용 (권장)
-uv add "mcp[cli]" yfinance pytz
+#### Mac/Linux
 
-# 또는 pip 사용
-pip install "mcp[cli]" yfinance pytz
-```
+1. 터미널을 열고 의존성을 설치합니다:
+   ```bash
+   # uv 사용 (권장)
+   uv add "mcp[cli]" yfinance pytz
+   
+   # 또는 pip 사용
+   pip install "mcp[cli]" yfinance pytz
+   ```
 
-### Claude Desktop에 설치
+2. 서버 실행:
+   ```bash
+   python3 stock_server.py
+   # 또는
+   mcp run stock_server.py
+   ```
 
-MCP CLI를 사용하여 Claude Desktop에 서버를 설치할 수 있습니다:
+3. Claude Desktop에 설치:
+   ```bash
+   mcp install stock_server.py --name "주식 데이터 서버"
+   ```
 
-```bash
-mcp install stock_server.py --name "사용할 서버 이름"
-```
+#### Windows
 
-## 사용 방법
+1. 명령 프롬프트(CMD) 또는 PowerShell을 관리자 권한으로 실행합니다.
 
-### 서버 실행
+2. 의존성 설치:
+   ```powershell
+   # uv 사용 (권장)
+   uv add "mcp[cli]" yfinance pytz
+   
+   # 또는 pip 사용
+   pip install "mcp[cli]" yfinance pytz
+   ```
 
-서버를 직접 실행하려면:
+3. 서버 실행:
+   ```powershell
+   python stock_server.py
+   # 또는
+   mcp run stock_server.py
+   ```
 
-```bash
-python stock_server.py
-```
+4. Claude Desktop에 설치:
+   ```powershell
+   mcp install stock_server.py --name "주식 데이터 서버"
+   ```
 
-또는 MCP CLI 사용:
-
-```bash
-mcp run stock_server.py
-```
-
-### MCP Inspector로 테스트
+## 개발 및 테스트
 
 개발 과정에서 서버를 테스트하려면:
 
@@ -70,7 +86,7 @@ mcp run stock_server.py
 mcp dev stock_server.py
 ```
 
-### Claude Desktop 사용 예시
+## Claude Desktop 사용 예시
 
 Claude Desktop에서 다음과 같은 질문을 통해 서버를 사용할 수 있습니다:
 
