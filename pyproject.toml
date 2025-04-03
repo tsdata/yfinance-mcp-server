@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yfinance-mcp-server"
+version = "0.1.0"
+description = "yfinance 주식 데이터 조회를 위한 MCP 서버"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]",
+    "yfinance",
+    "pytz",
+]
+
+[project.scripts]
+yfinance-mcp-server = "yfinance-mcp-server:main"
